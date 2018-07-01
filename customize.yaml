@@ -1,0 +1,80 @@
+device_tracker.00a0ded438f1:
+  hidden: true
+device_tracker.48d705769a09:
+  hidden: true
+device_tracker.7831c151d823:
+  hidden: true
+device_tracker.001d600dfb23:
+  hidden: true
+device_tracker.000420f7277d:
+  hidden: true
+device_tracker.c0210d751357:
+  hidden: true
+device_tracker.689e19e0022b:
+  hidden: true
+device_tracker.e066782f7527:
+  hidden: true
+device_tracker.908d6c8e79a6:
+  hidden: true
+device_tracker.101f745f7658:
+  hidden: true
+device_tracker.1ce62bb2a4bd:
+  hidden: true
+device_tracker.00bb3ac23ad6:
+  hidden: true
+sensor.john_battery_state:
+  hidden: true
+sensor.john_battery_level:
+  hidden: true
+sensor.theresas_iphone_battery_state:
+  hidden: true
+sensor.theresas_iphone_battery_level:
+  hidden: true
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: Today's High Temperature
+sensor.dark_sky_daily_high_temperature_1:
+  friendly_name: Tomorrow's High Temperature
+sensor.pollen_index:
+  icon: mdi:flower
+sensor.pollen_level:
+  icon: mdi:flower
+sensor.top_allergen_1:
+  icon: mdi:flower
+sensor.top_allergen_2:
+  icon: mdi:flower
+sensor.top_allergen_3:
+  icon: mdi:flower
+sensor.pollen_trend:
+  icon: mdi:flower
+sensor.pollen_outlook:
+  icon: mdi:flower
+sensor.pollen_season:
+  icon: mdi:flower
+sensor.pollen_index_forecast:
+  icon: mdi:flower
+sensor.pollen_level_forecast:
+  icon: mdi:flower
+sensor.cold__flu_percentage:
+  icon: mdi:snowflake
+sensor.cold_flu_risk:
+  icon: mdi:snowflake
+binary_sensor.basementextdoor_sensor:
+  friendly_name: Basement Sliding Door
+  hidden: false
+  sensor_class: opening
+binary_sensor.deckdoorsensor_sensor:
+  friendly_name: Deck Door
+  hidden: false
+  sensor_class: opening
+binary_sensor.basementmultisensor6_sensor:
+  friendly_name: Basement Motion
+binary_sensor.frontdoorsensor_sensor:
+  friendly_name: Front Door
+binary_sensor.garageintdoorsensor_sensor:
+  friendly_name: Garage Interior Door
+switch.garageextlights_switch:
+  icon: mdi:lightbulb-on-outline
+group.all_automations:
+  hidden: false
+zone.home:
+  radius: 150

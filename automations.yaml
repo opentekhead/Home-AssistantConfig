@@ -1,0 +1,14 @@
+- action:
+  - alias: ''
+    data:
+      message: Alarm not set!
+    service: notify.ios_group_notify
+  alias: Alarm Reminder
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.house
+    state: disarmed
+  id: '1519877524382'
+  trigger:
+  - at: '22:00'
+    platform: time

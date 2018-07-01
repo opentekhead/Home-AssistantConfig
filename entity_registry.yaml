@@ -1,0 +1,380 @@
+sensor.theresas_iphone_battery_state:
+  name:
+  platform: ios
+  unique_id: state_Theresa
+sensor.john_battery_state:
+  name:
+  platform: ios
+  unique_id: state_JMussell
+sensor.john_battery_level:
+  name:
+  platform: ios
+  unique_id: level_JMussell
+sensor.theresas_iphone_battery_level:
+  name:
+  platform: ios
+  unique_id: level_Theresa
+lock.garageintlock_locked:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077282304
+sensor.garageintlock_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.garageintlock_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.garageintlock_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.garageintlock_access_control:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528209
+sensor.garageintlock_burglar:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528225
+sensor.garageintlock_power_management:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528241
+sensor.garageintlock_system:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528257
+binary_sensor.basementextdoor_sensor:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.basementextdoor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.basementextdoor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.basementextdoor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.basementextdoor_burglar:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305441
+sensor.thermostat_temperature:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811154
+climate.thermostat_heating_1:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127106066
+climate.thermostat_cooling_1:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127106082
+climate.thermostat_furnace:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127106162
+climate.thermostat_dry_air:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127106178
+binary_sensor.basementwatersensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.basementwatersensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.basementwatersensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.basementwatersensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.basementwatersensor_flood:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144637057
+binary_sensor.deckdoorsensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160349184
+sensor.deckdoorsensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.deckdoorsensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.deckdoorsensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.deckdoorsensor_burglar:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414305
+binary_sensor.basementmultisensor6_sensor:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177126400
+sensor.basementmultisensor6_temperature:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177142802
+sensor.basementmultisensor6_luminance:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177142834
+sensor.basementmultisensor6_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177142866
+sensor.basementmultisensor6_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177143218
+sensor.basementmultisensor6_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.basementmultisensor6_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.basementmultisensor6_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.basementmultisensor6_burglar:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191521
+binary_sensor.frontdoorsensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.frontdoorsensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.frontdoorsensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.frontdoorsensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.frontdoorsensor_burglar:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968737
+binary_sensor.garageintdoorsensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210680832
+sensor.garageintdoorsensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.garageintdoorsensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.garageintdoorsensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.garageintdoorsensor_burglar:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745953
+switch.alarmkeypad_switch:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227277824
+sensor.alarmkeypad_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.alarmkeypad_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.alarmkeypad_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.alarmkeypad_access_control:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523153
+sensor.alarmkeypad_burglar:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523169
+switch.siren_switch:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244055040
+switch.garageextlights_switch:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311163904
+sensor.garageextlights_energy:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311376898
+sensor.garageextlights_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311376914
+sensor.garageextlights_power:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377026
+sensor.garageextlights_previous_reading_2:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377042
+sensor.garageextlights_voltage:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377154
+sensor.garageextlights_previous_reading_3:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377170
+sensor.garageextlights_current:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377218
+sensor.garageextlights_previous_reading_4:
+  name:
+  platform: zwave
+  unique_id: 16-72057594311377234
+sensor.allergy_index_forecasted_average:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_index_forecasted_average
+sensor.allergy_index_today:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_index_today
+sensor.allergy_index_historical_average:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_index_historical_average
+sensor.allergy_index_tomorrow:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_index_tomorrow
+sensor.allergy_index_yesterday:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_index_yesterday
+sensor.cold__flu_forecasted_average:
+  name:
+  platform: pollen
+  unique_id: 14001_cold__flu_forecasted_average
+sensor.johns_iphone_battery_level:
+  name:
+  platform: ios
+  unique_id: level_alarm_panel
+sensor.johns_iphone_battery_state:
+  name:
+  platform: ios
+  unique_id: state_alarm_panel
+sensor.zachs_ipad_battery_level:
+  name:
+  platform: ios
+  unique_id: level_zachs_ipad
+sensor.zachs_ipad_battery_state:
+  name:
+  platform: ios
+  unique_id: state_zachs_ipad
+zwave.aeotec_dsa02203_zstick_s2:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.garageintlock:
+  name:
+  platform: zwave
+  unique_id: node-2
+zwave.basementextdoor:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.thermostat:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.basementwatersensor:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.deckdoorsensor:
+  name:
+  platform: zwave
+  unique_id: node-7
+zwave.basementmultisensor6:
+  name:
+  platform: zwave
+  unique_id: node-8
+zwave.frontdoorsensor:
+  name:
+  platform: zwave
+  unique_id: node-9
+zwave.garageintdoorsensor:
+  name:
+  platform: zwave
+  unique_id: node-10
+zwave.alarmkeypad:
+  name:
+  platform: zwave
+  unique_id: node-11
+zwave.siren:
+  name:
+  platform: zwave
+  unique_id: node-12
+zwave.garageextlights:
+  name:
+  platform: zwave
+  unique_id: node-16
+binary_sensor.sensor:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261012480
+sensor.alarm_type:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.alarm_level:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077457
+sensor.aeotec_dsb45_water_sensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.aeotec_dsb45_water_sensor_flood:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077569
+zwave.aeotec_dsb45_water_sensor:
+  name:
+  platform: zwave
+  unique_id: node-13

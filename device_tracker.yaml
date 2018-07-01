@@ -1,0 +1,17 @@
+# nmap setup
+#    - platform: nmap_tracker
+#      hosts: 192.168.240.1/24
+#      home_interval: 10
+#      track_new_devices: yes
+#      scan_options: --disable-arp-ping -sn -n -PU1-10 --max-rate 100
+#      consider_home: 180
+#      exclude:
+#r        - 192.168.240.35
+    
+# UniFi Controller
+#   - platform: unifi
+#      username: !secret unifi_user
+#      password: !secret unifi_password
+
+
+

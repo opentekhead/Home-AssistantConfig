@@ -1,0 +1,113 @@
+# Darksky weather forecast
+  - platform: darksky
+    api_key: !secret darksky_api
+    update_interval: '00:05'
+    forecast:
+      - 1
+    monitored_conditions:
+      - summary
+      - temperature
+      - temperature_max
+      - daily_summary
+      - hourly_summary
+      - precip_probability
+      - apparent_temperature
+
+# Pollen
+  - platform: pollen
+    zip_code: "14001"
+    monitored_conditions:
+      - allergy_average_forecasted
+      - allergy_average_historical
+      - allergy_index_today
+      - allergy_index_tomorrow
+      - allergy_index_yesterday
+      - disease_average_forecasted
+
+  - platform: plex
+    name: PlexCrash
+    host: 192.168.240.60
+    port: 32400
+    username: !secret plex_user
+    password: !secret plex_password
+    
+  - platform: speedtest
+    minute: 30
+    hour:
+      - 0
+      - 6
+      - 12
+      - 18
+    monitored_conditions:
+      - download
+      - upload
+
+#  - platform: command_line
+#    name: SSL cert expiry
+#    unit_of_measurement: days
+#    scan_interval: 10800
+#    command: "ssl-cert-check -b -c /etc/letsencrypt/live/mussellha.duckdns.org/cert.pem | awk '{ print $NF }'"
+    
+# Hass Version
+  - platform: version
+
+# Sensor batteries
+#  - platform: template
+#    sensors:
+#      basementwatersensor_batt:
+#        value_template: '{{ states.zwave.basementwatersensor.attributes.battery_level }}'
+#        friendly_name: 'Basement Water Sensor Battery'
+#        unit_of_measurement: '%'
+#      garageintlock_batt:
+#        value_template: '{{ states.zwave.garageintlock.attributes.battery_level }}'
+#        friendly_name: 'Garage Int Lock Battery'
+#        unit_of_measurement: '%'
+#      basementextdoor_batt:
+#        value_template: '{{ states.zwave.basementextdoor.attributes.battery_level }}'
+#        friendly_name: 'Basement Ext Door Battery'
+#        unit_of_measurement: '%'
+#      frontdoorsensor_batt:
+#        value_template: '{{ states.zwave.frontdoorsensor.attributes.battery_level }}'
+#        friendly_name: 'Front Door Sensor Battery'
+#        unit_of_measurement: '%'
+#      deckdoorsensor_batt:
+#        value_template: '{{ states.zwave.deckdoorsensor.attributes.battery_level }}'
+#        friendly_name: 'Deck Door Sensor Battery'
+#        unit_of_measurement: '%'
+#      garageintdoorsensor_batt:
+#        value_template: '{{ states.zwave.garageintdoorsensor.attributes.battery_level }}'
+#        friendly_name: 'Garage Int Door Sensor Battery'
+#        unit_of_measurement: '%'
+        
+# Arlo Sensors
+#  - platform: arlo
+#    monitored_conditions:
+#      - captured_today
+#      - last_capture
+#      - total_cameras
+#      - battery_level
+#      - signal_strength
+
+ # APCUPSd
+  - platform: apcupsd
+    resources:
+      - bcharge
+      - linev
+      - loadpct
+      - nominv
+      - nompower
+      - numxfers
+      - status
+      - timeleft
+      - tonbatt
+
+# Xbox Live
+#  - platform: xbox_live
+#    api_key: !secret XboxLive_api
+#    xuid:
+#      - 2533274988278541
+
+# Time sensor for Alarm Panel
+  - platform: time_date
+    display_options:
+      - 'time'

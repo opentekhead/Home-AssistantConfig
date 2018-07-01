@@ -1,0 +1,219 @@
+### GROUPS ###
+
+default_view:
+    view: yes
+    icon: mdi:home 
+    entities:
+      - alarm_control_panel.house
+      - device_tracker.jmussell
+      - device_tracker.theresa
+      - sensor.dark_sky_temperature
+      - sensor.allergy_index_today
+      - group.alarm
+      - group.lock
+      - group.harmony
+      - group.thermostat
+
+alarm:
+    name: Alarm
+    view: no
+    entities:
+      - alarm_control_panel.ha_alarm
+      
+lock:
+    name: Lock
+    view: no
+    entities:
+      - lock.garageintlock_locked
+      
+# Climate
+climate:
+    name: Climate
+    view: no
+    entities:
+      - sensor.dark_sky_daily_summary
+      - sensor.dark_sky_hourly_summary
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_high_temperature_1
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_precip_probability_1
+      
+pollen:
+    name: Pollen
+    view: no
+    entities:
+      - sensor.allergy_index_forecasted_average
+      - sensor.allergy_index_historical_average
+      - sensor.allergy_index_today
+      - sensor.allergy_index_tomorrow
+      - sensor.allergy_index_yesterday
+      - sensor.cold__flu_forecasted_average
+
+harmony:
+    name: Harmony
+    view: no
+    entities:
+      - remote.lrharmony
+      
+# MEDIA TAB
+media:
+    name: Media
+    view: yes
+    icon: mdi:filmstrip
+    entities:
+      - sensor.plexcrash
+      - group.xbox_live
+      - media_player.fire_tv
+      - media_player.living_room_main
+      - media_player.wx030_main
+      - media_player.zachphone
+
+xbox_live:
+    name: xbox_live
+    view: no
+    entities:
+      - sensor.metabolicbadge6
+
+thermostat:
+    name: thermostat
+    view: no
+    entities:
+      - climate.thermostat_heating_1
+      - climate.thermostat_cooling_1
+
+# Other
+utilities:
+    name: utilities 
+    view: yes
+    icon: mdi:router-wireless
+    entities:
+      - sensor.current_version
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - group.ups
+      - group.temperatures
+      - group.humidity
+      - group.doors
+      - group.zwave_switches
+      - group.zwave_sensors
+      - group.zwave_devices
+      - group.all_automations
+
+# UPS
+ups:
+    name: UPS
+    view: no
+    entities:
+      - sensor.ups_battery
+      - sensor.ups_input_voltage
+      - sensor.ups_load
+      - sensor.ups_output_voltage
+      - sensor.ups_status
+      - sensor.ups_time_left
+      - sensor.ups_time_on_battery
+      - sensor.ups_transfer_count
+
+# Weather
+weather:
+    name: weather
+    view: yes
+    icon: mdi:weather-sunny
+    entities:
+      - group.climate
+      - group.pollen
+
+doors:
+    name: Doors
+    view: no
+    entities:
+      - binary_sensor.deckdoorsensor_sensor
+      - binary_sensor.basementextdoor_sensor
+      - binary_sensor.frontdoorsensor_sensor
+      - binary_sensor.garageintdoorsensor_sensor
+      
+temperatures:
+    name: Temperatures
+    view: no
+    entities:
+      - sensor.basementmultisensor6_temperature
+      - sensor.dark_sky_temperature
+      - sensor.thermostat_temperature
+
+humidity:
+    name: Humidity
+    view: no
+    entities:
+      - sensor.basementmultisensor6_relative_humidity
+
+zwave_switches:
+    name: Zwave Switches
+    view: no
+    entities:
+      - switch.garageextlights_switch
+        
+zwave_sensors:
+    name: Zwave Sensors
+    view: no
+    entities:
+      - sensor.garageextlights_voltage
+      - sensor.garageextlights_current
+      - sensor.garageextlights_energy
+      - sensor.garageextlights_power
+      - sensor.garageextlights_previous_reading
+      - sensor.garageextlights_previous_reading_2
+      - sensor.garageextlights_previous_reading_3
+      - sensor.garageextlights_previous_reading_4
+      - binary_sensor.basementmultisensor6_sensor
+      - binary_sensor.basementwatersensor_sensor
+      - sensor.basementwatersensor_flood
+      - sensor.basementmultisensor6_burglar
+      - sensor.basementmultisensor6_luminance
+      - sensor.basementmultisensor6_ultraviolet
+      - sensor.basementextdoor_burglar
+      - climate.thermostat_cooling_1
+      - climate.thermostat_dry_air
+      - climate.thermostat_furnace
+      - climate.thermostat_heating_1
+      
+      
+zwave_devices:
+    name: Zwave Devices
+    view: no
+    entities:
+      - zwave.siren
+      - zwave.thermostat
+      - zwave.aeotec_dsa02203_zstick_s2
+      - zwave.frontdoorsensor
+      - sensor.frontdoorsensor_batt
+      - zwave.deckdoorsensor
+      - sensor.deckdoorsensor_batt
+      - zwave.basementextdoor
+      - sensor.basementextdoor_batt
+      - zwave.basementwatersensor
+      - sensor.basementwatersensor_batt
+      - zwave.basementmultisensor6
+      - zwave.garageintlock
+      - sensor.garageintlock_batt
+      - zwave.garageextlights
+      - zwave.garageintdoorsensor
+      - sensor.garageintdoorsensor_batt
+
+arlo:
+    name: Arlo
+    view: yes
+    icon: mdi:camera
+    entities:
+      - camera.driveway
+      - camera.garden
+      - sensor.battery_level_driveway
+      - sensor.battery_level_garden
+      - sensor.captured_today_driveway
+      - sensor.captured_today_garden
+      - group.camera_sensors
+
+camera_sensors:
+    name: Cam_Sensors
+    view: no
+    entities:
+      - sensor.last_driveway
+      - sensor.last_garden
