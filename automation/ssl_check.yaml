@@ -12,7 +12,7 @@
       entity_id: sensor.ssl_cert_expiry
       below: 21
     action:
-      service: notify.ios_JMussell
+      service: notify.ios_john
       data:
         message: 'Warning - SSL certificate expires in 21 days and has not been automatically renewed'
   
