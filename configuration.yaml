@@ -1,0 +1,172 @@
+homeassistant:
+    # Name of the location where Home Assistant is running
+    name: Home
+    # Impacts weather/sunrise data (altitude above sea level in meters)
+    elevation: 650
+    # metric for Metric, imperial for Imperial
+    unit_system: imperial
+    # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    time_zone: America/New_York
+    #customize front page
+    customize: !include customize.yaml
+    # Location required to calculate the time the sun rises and sets
+    latitude: !secret latitude_home
+    longitude: !secret longitude_home
+    whitelist_external_dirs:
+      - '/tmp'
+
+zone:
+  - name: WorkT
+    # Kelkenberg Homes
+    latitude: !secret latitude_WorkT
+    longitude: !secret longitude_WorkT
+    icon: mdi:worker
+
+  - name: ATRO
+    latitude: !secret latitude_ATRO
+    longitude: !secret longitude_ATRO
+    icon: mdi:account-network
+  
+  - name: Home
+    latitude: !secret latitude_home
+    longitude: !secret longitude_home
+    radius: 150
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+    javascript_version: latest
+
+# Enables configuration UI
+config:
+
+http:
+    # Uncomment this to add a password (recommended!)
+    api_password: !secret http_password
+    # Uncomment this if you are using SSL or running in Docker etc
+    # base_url: example.duckdns.org:8123
+    base_url: !secret base_url
+    trusted_networks:
+      - 192.168.240.0/24
+    ip_ban_enabled: True
+    login_attempts_threshold: 5
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Harmony Hub
+remote:
+   platform: harmony
+   name: LRHarmony
+   host: 192.168.240.45
+   
+# Yamaha MusicCast
+media_player:
+    - platform: yamaha_musiccast
+      name: "WX-030"
+      host: 192.168.240.32
+      port: 5005
+    
+    - platform: yamaha_musiccast
+      name: "LivingRoomMC"
+      host: 192.168.240.30
+      port: 5006
+    
+    - platform: tts_bluetooth_speaker
+      name: "Alarm Speaker"
+      address: C8:84:47:25:F5:0D
+      volume: 0.45
+   
+# Text to speech
+tts:
+  platform: google
+
+# Manual activation of ios component
+ios: 
+
+# Zwave Activation
+zwave:
+  usb_path: /dev/ttyUSB0
+  network_key: !secret zwave_network_key 
+
+# Climate zwave
+climate:
+  - platform: zwave
+
+# Added 2018-03-23 to implement yet another alarm  
+alarm_control_panel: !include alarm.yaml
+# panel_custom: !include panel_custom.yaml  
+  
+# Removed 2018-03-23 to implement yet another alarm  
+panel_custom:
+    - name: alarm
+      sidebar_title: Alarm
+      sidebar_icon: mdi:security-home
+      config:
+          alarmid: alarm_control_panel.house
+
+# Camera - Local USB
+# camera:
+# - platform: local_file
+#   name: Radon Meter
+#    file_path: /tmp/lastsnap.jpg
+
+# ffmpeg for arlo
+ffmpeg:
+
+# Arlo Component
+#arlo:
+#   username: !secret arlo_username
+#   password: !secret arlo_password
+
+# Arlo Cameras
+#camera:
+#  - platform: arlo
+#    ffmpeg_arguments: '-pred 1 -q:v 2'
+
+# APCUPSd on pfsense
+apcupsd:
+   host: 192.168.240.10
+
+group: !include groups.yaml
+
+sensor: !include sensor.yaml
+
+device_tracker: !include device_tracker.yaml
+
+automation: !include automations.yaml
+
+automation old: !include_dir_merge_list automation/
+
+notify: !include notify.yaml
+
+# Removed 2018-03-23 to implement yet another alarm  
+#alarm_control_panel: !include alarm_panel.yaml
+
+logger:
+  default: warning
+
