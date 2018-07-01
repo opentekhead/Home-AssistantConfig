@@ -1,3 +1,5 @@
+# 2018-07-01 updated pollen zip
+
 # Darksky weather forecast
   - platform: darksky
     api_key: !secret darksky_api
@@ -15,7 +17,7 @@
 
 # Pollen
   - platform: pollen
-    zip_code: "14001"
+    zip_code: !secret pollen_zip
     monitored_conditions:
       - allergy_average_forecasted
       - allergy_average_historical
@@ -41,12 +43,6 @@
     monitored_conditions:
       - download
       - upload
-
-#  - platform: command_line
-#    name: SSL cert expiry
-#    unit_of_measurement: days
-#    scan_interval: 10800
-#    command: "ssl-cert-check -b -c /etc/letsencrypt/live/mussellha.duckdns.org/cert.pem | awk '{ print $NF }'"
     
 # Hass Version
   - platform: version
@@ -100,12 +96,6 @@
       - status
       - timeleft
       - tonbatt
-
-# Xbox Live
-#  - platform: xbox_live
-#    api_key: !secret XboxLive_api
-#    xuid:
-#      - 2533274988278541
 
 # Time sensor for Alarm Panel
   - platform: time_date

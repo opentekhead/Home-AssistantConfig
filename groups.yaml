@@ -1,11 +1,12 @@
 ### GROUPS ###
+# 2018-07-01 Updated device tracker John name and removed xbox_live
 
 default_view:
     view: yes
     icon: mdi:home 
     entities:
       - alarm_control_panel.house
-      - device_tracker.jmussell
+      - device_tracker.john
       - device_tracker.theresa
       - sensor.dark_sky_temperature
       - sensor.allergy_index_today
@@ -67,12 +68,6 @@ media:
       - media_player.living_room_main
       - media_player.wx030_main
       - media_player.zachphone
-
-xbox_live:
-    name: xbox_live
-    view: no
-    entities:
-      - sensor.metabolicbadge6
 
 thermostat:
     name: thermostat
