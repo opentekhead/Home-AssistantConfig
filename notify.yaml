@@ -3,5 +3,5 @@
 - name: ios_group_notify
   platform: group
   services:
-    - service: ios_jmussell
+    - service: ios_john
     - service: ios_theresa
