@@ -1,7 +1,7 @@
 *
+!custom_components
 !*.yaml
 !automation
-!custom_components
 !panels
 !scenes
 !.gitignore
