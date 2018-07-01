@@ -1,0 +1,23 @@
+# UPS Power Loss
+  - alias: 'Notify when UPS goes on battery'
+    trigger:
+      - platform: state
+        entity_id: sensor.ups_status
+        from: 'ONLINE'
+        to: 'ONBATT'
+    action:
+      - service: notify.ios_group_notify
+        data:
+          message: "Home UPS on battery!"
+
+# UPS Power Returned
+  - alias: 'Notify when power returns to UPS'
+    trigger:
+      - platform: state
+        entity_id: sensor.ups_status
+        from: 'ONBATT'
+        to: 'ONLINE'
+    action:
+      - service: notify.ios_group_notify
+        data:
+          message: "Power returned to UPS!"

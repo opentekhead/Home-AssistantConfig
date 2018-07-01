@@ -1,8 +1,8 @@
 *
 !*.yaml
-!automation/*.yaml
-!custom_components/*.*
-!panels/*.*
+!automation
+!custom_components
+!panels
 !scenes
 !.gitignore
 secrets.yaml

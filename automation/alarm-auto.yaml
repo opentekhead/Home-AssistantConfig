@@ -1,0 +1,87 @@
+- id: alarm_armed_away
+  alias: '[Alarm] Away Mode Armed'
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: 'armed_away'
+  action:
+  - service: notify.ios_group_notify
+    data:
+      message: 'Alarm now Armed Away!'
+  - service: homeassistant.turn_off
+    entity_id: remote.lrharmony
+
+- id: alarm_disarmed
+  alias: '[Alarm] Disarmed'
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: 'disarmed'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.siren_switch
+  - service: notify.ios_group_notify
+    data:
+      message: 'The house alarm has been Deactivated'
+    
+
+- id: alarm_triggered
+  alias: '[Alarm] Triggered'
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: 'triggered'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.siren_switch
+  - service: tts.google_say
+    entity_id: media_player.living_room_main
+    data:
+      message: 'Alarm triggered!'
+  - service: notify.ios_group_notify
+    data:
+      message: 'ALARM TRIGGERED!!! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][ states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name }}'
+      data:
+        push:
+          sound: "US-EN-Alexa-Motion-Detected-Generic.wav"
+
+- id: alarm_warning
+  alias: '[Alarm] Warning'
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: 'warning'
+  action:
+  - service: tts.google_say
+    entity_id: media_player.living_room_main
+    data:
+      message: 'Alarm warning! Siren will turn on in 30 seconds'
+  - service: notify.ios_group_notify
+    data:
+      message: 'ALARM Warning {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][ states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name }}'
+      data:
+         push:
+           sound: "US-EN-Alexa-Motion-Detected-Generic.wav"
+
+- id: alarm_disarm_keypad
+  alias: '[Alarm] Disarmed with Lock Keypad'
+  trigger:
+    - platform: state
+      entity_id: sensor.garageintlock_alarm_type
+      to: '19'
+      # many z-wave locks use Alarm Type 19 for 'Unlocked by Keypad'
+  condition:
+    condition: or
+    conditions: 
+      - condition: state
+        entity_id: alarm_control_panel.house
+        state: 'armed_away'
+      - condition: state
+        entity_id: alarm_control_panel.house
+        state: 'armed_home'
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
+    - service: notify.ios_group_notify
+      data:
+        message: 'ALARM Warning {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][ states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name }}'

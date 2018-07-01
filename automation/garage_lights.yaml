@@ -1,0 +1,43 @@
+  # Turn off exterior lights when the sun is above -4    
+  - alias: 'Turn off exterior lights at sunrise'
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: "{{ state.attributes.elevation }}"
+      # Can be a positive or negative number
+      above: -4.0
+    condition:
+      condition: state
+      entity_id: switch.garageextlights_switch
+      state: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.garageextlights_switch
+#      - service: notify.ios_group_notify
+#        data:
+#          message: "Garage Lights off"
+#          data:
+#            push:
+#              sound: "US-EN-Morgan-Freeman-Turning-Off-The-Lights.wav" 
+  
+  # Turn on Garage exterior lights when the sun is below -4    
+  - alias: 'Exterior Lighting on when dark outside'
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: "{{ state.attributes.elevation }}"
+      # Can be a positive or negative number
+      below: -4.0
+    condition:
+      condition: state
+      entity_id: switch.garageextlights_switch
+      state: 'off'
+    action:
+      - service: switch.turn_on
+        entity_id: switch.garageextlights_switch
+#      - service: notify.ios_group_notify
+#        data:
+#          message: "Garage Lights on"
+#          data:
+#            push:
+#              sound: "US-EN-Morgan-Freeman-Turning-On-The-Lights.wav"

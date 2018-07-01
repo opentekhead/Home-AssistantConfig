@@ -1,0 +1,13 @@
+# Water detected in basement
+  - alias: 'Water detected in basement!'
+    trigger:
+      platform: state
+      entity_id: binary_sensor.basementwatersensor_sensor
+      to: 'on'
+    action:
+      - service: notify.ios_group_notify
+        data:
+          message: "Water detect in basement!"
+          data:
+          push:
+            badge: 5

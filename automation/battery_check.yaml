@@ -1,0 +1,19 @@
+  # Check all zwave devices battery levels          
+  - alias: Battery Notifications
+    trigger:
+      - platform: numeric_state
+        entity_id:
+          - zwave.garageintlock
+          - zwave.garageintdoorsensor
+          - zwave.frontdoorsensor
+          - zwave.deckdoorsensor
+          - zwave.basementwatersensor
+          - zwave.basementmultisensor6
+          - zwave.basementextdoor
+          - zwave.alarmkeypad
+        value_template: "{{ state.attributes.battery_level }}"
+        below: '20'
+    action:
+      - service: notify.ios_group_notify
+        data:
+          message: "Time to check zwave batteries"
