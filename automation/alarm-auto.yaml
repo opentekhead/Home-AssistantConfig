@@ -24,7 +24,6 @@
     data:
       message: 'The house alarm has been Deactivated'
     
-
 - id: alarm_triggered
   alias: '[Alarm] Triggered'
   trigger:
@@ -85,3 +84,68 @@
     - service: notify.ios_group_notify
       data:
         message: 'ALARM Warning {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][ states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name }}'
+
+- id: ACTIONABLE_REQ-001
+  alias: Actionable Request - Request alarm to be armed when nobody home.
+  trigger:
+  - entity_id: group.awesome_people
+    platform: state
+    to: 'not_home'
+    for:
+      minutes: 5
+  action:
+  - alias: Ask if alarm should be enabled
+    service: notify.ios_john
+    data:
+      message: 'Nobody is home. Would you like to turn on the alarm?'
+      data:
+        push:
+          category: arm_alarm
+        
+- id: ACTIONABLE_REQ-002
+  alias: Actionable Request - Request alarm to be disarmed when arriving home.
+  trigger:
+  - entity_id: device_tracker.john
+    event: enter
+    platform: zone
+    zone: zone.home
+  action:
+  - alias: Ask if alarm should be disarmed.
+    data:
+      data:
+        push:
+          category: disarm_alarm
+      message: 'The alarm is on. Would you like to turn it off?'
+    service: notify.ios_john
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.house
+    state: 'armed_away'
+    
+- id: ACTIONABLE_RESP-001
+  alias: Actionable Response - Receive the arm request and arm accordingly
+  trigger:
+  - platform: event
+    event_type: ios.notification_action_fired
+    event_data:
+      actionName: CONFIRM_ARM
+  action:
+  - alias: Turn on Alarm
+    service: alarm_control_panel.alarm_arm_away
+    data:
+      entity_id: alarm_control_panel.house
+    
+- id: ACTIONABLE_RESP-002
+  alias: Actionable Response - Receive disarm request with pin and disarm accordingly
+  trigger:
+  - platform: event
+    event_type: ios.notification_action_fired
+    event_data:
+      actionName: CONFIRM_DISARM
+  action:
+  - alias: Turn off Alarm
+    service: alarm_control_panel.alarm_disarm
+    data_template:
+      code: '{{ trigger.event.data["textInput"] }}'
+      entity_id: alarm_control_panel.house
+    

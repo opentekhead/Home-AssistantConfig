@@ -483,3 +483,18 @@ sensor.john_battery_level_2:
   name:
   platform: ios
   unique_id: level_John
+sensor.allergy_index_forecasted_average_2:
+  config_entry_id:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_average_forecasted
+sensor.allergy_index_historical_average_2:
+  config_entry_id:
+  name:
+  platform: pollen
+  unique_id: 14001_allergy_average_historical
+sensor.cold__flu_forecasted_average_2:
+  config_entry_id:
+  name:
+  platform: pollen
+  unique_id: 14001_disease_average_forecasted

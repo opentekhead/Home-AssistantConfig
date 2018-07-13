@@ -30,7 +30,7 @@ zone:
   - name: Home
     latitude: !secret latitude_home
     longitude: !secret longitude_home
-    radius: 150
+    radius: 100
 
 # Show links to resources in log and frontend
 #introduction:
@@ -107,6 +107,40 @@ tts:
 
 # Manual activation of ios component
 ios: 
+  push:
+    categories:
+      - name: Arm House Alarm
+        identifier: 'arm_alarm'
+        actions:
+          - identifier: 'CONFIRM_ARM'
+            title: 'Activate Alarm'
+            activationMode: 'background'
+            authenticationRequired: yes
+            destructive: yes
+            behavior: 'default'
+          - identifier: 'IGNORE_ARM'
+            title: 'Ignore Alarm Activation'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: no
+            behavior: 'default'
+      - name: Disarm House Alarm
+        identifier: 'disarm_alarm'
+        actions:
+          - identifier: 'CONFIRM_DISARM'
+            title: 'Disarm Alarm'
+            activationMode: 'background'
+            authenticationRequired: yes
+            destructive: yes
+            behavior: 'textInput'
+            textInputButtonTitle: 'CONFIRM CODE'
+            textInputPlaceholder: ''
+          - identifier: 'IGNORE_DISARM'
+            title: 'Leave Alarm On'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: no
+            behavior: 'default'
 
 # Zwave Activation
 zwave:

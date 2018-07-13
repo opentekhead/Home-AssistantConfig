@@ -212,3 +212,10 @@ camera_sensors:
     entities:
       - sensor.last_driveway
       - sensor.last_garden
+
+awesome_people:
+    name: Awesome People
+    view: no
+    entities:
+      - device_tracker.john
+      - device_tracker.theresa
