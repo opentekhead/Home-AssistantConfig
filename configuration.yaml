@@ -30,7 +30,6 @@ zone:
   - name: Home
     latitude: !secret latitude_home
     longitude: !secret longitude_home
-    radius: 100
 
 # Show links to resources in log and frontend
 #introduction:
@@ -173,14 +172,14 @@ panel_custom:
 ffmpeg:
 
 # Arlo Component
-#arlo:
-#   username: !secret arlo_username
-#   password: !secret arlo_password
+arlo:
+   username: !secret arlo_username
+   password: !secret arlo_password
 
 # Arlo Cameras
-#camera:
-#  - platform: arlo
-#    ffmpeg_arguments: '-pred 1 -q:v 2'
+camera:
+  - platform: arlo
+    ffmpeg_arguments: '-pred 1 -q:v 2'
 
 # APCUPSd on pfsense
 apcupsd:

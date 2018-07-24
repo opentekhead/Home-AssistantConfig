@@ -3,16 +3,6 @@ sensor.theresas_iphone_battery_state:
   name:
   platform: ios
   unique_id: state_Theresa
-sensor.john_battery_state:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: state_JMussell
-sensor.john_battery_level:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: level_JMussell
 sensor.theresas_iphone_battery_level:
   config_entry_id:
   name:
@@ -363,16 +353,6 @@ sensor.cold__flu_forecasted_average:
   name:
   platform: pollen
   unique_id: 14001_cold__flu_forecasted_average
-sensor.johns_iphone_battery_level:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: level_alarm_panel
-sensor.johns_iphone_battery_state:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: state_alarm_panel
 sensor.zachs_ipad_battery_level:
   config_entry_id:
   name:
@@ -473,16 +453,6 @@ zwave.aeotec_dsb45_water_sensor:
   name:
   platform: zwave
   unique_id: node-13
-sensor.john_battery_state_2:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: state_John
-sensor.john_battery_level_2:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: level_John
 sensor.allergy_index_forecasted_average_2:
   config_entry_id:
   name:
@@ -498,3 +468,33 @@ sensor.cold__flu_forecasted_average_2:
   name:
   platform: pollen
   unique_id: 14001_disease_average_forecasted
+sensor.john_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: 'state_John '
+sensor.john_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: 'level_John '
+sensor.johns_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_alarm_panel
+sensor.johns_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_alarm_panel
+sensor.john_battery_state_2:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_John
+sensor.john_battery_level_2:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_John

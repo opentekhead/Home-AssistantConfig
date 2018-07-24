@@ -1,8 +1,11 @@
 - action:
-  - alias: ''
-    data:
-      message: Alarm not set!
+  - alias: Ask if alarm should be enabled
     service: notify.ios_group_notify
+    data:
+      message: '10pm, alarm not armed. Would you like to turn on the alarm?'
+      data:
+        push:
+          category: arm_alarm
   alias: Alarm Reminder
   condition:
   - condition: state

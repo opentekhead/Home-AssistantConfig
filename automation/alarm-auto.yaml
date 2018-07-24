@@ -95,7 +95,7 @@
       minutes: 5
   action:
   - alias: Ask if alarm should be enabled
-    service: notify.ios_john
+    service: notify.ios_group_notify
     data:
       message: 'Nobody is home. Would you like to turn on the alarm?'
       data:
@@ -116,7 +116,27 @@
         push:
           category: disarm_alarm
       message: 'The alarm is on. Would you like to turn it off?'
-    service: notify.ios_john
+    service: notify.ios_john_
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.house
+    state: 'armed_away'
+
+- id: ACTIONABLE_REQ-003
+  alias: Actionable Request - Request alarm to be disarmed when arriving home, Theresa.
+  trigger:
+  - entity_id: device_tracker.theresa
+    event: enter
+    platform: zone
+    zone: zone.home
+  action:
+  - alias: Ask if alarm should be disarmed.
+    data:
+      data:
+        push:
+          category: disarm_alarm
+      message: 'The alarm is on. Would you like to turn it off?'
+    service: notify.ios_theresa
   condition:
   - condition: state
     entity_id: alarm_control_panel.house

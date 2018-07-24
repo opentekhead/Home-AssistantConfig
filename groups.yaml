@@ -217,5 +217,5 @@ awesome_people:
     name: Awesome People
     view: no
     entities:
-      - device_tracker.john
+#     - device_tracker.john
       - device_tracker.theresa

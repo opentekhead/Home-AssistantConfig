@@ -9,7 +9,6 @@
     monitored_conditions:
       - summary
       - temperature
-      - temperature_max
       - daily_summary
       - hourly_summary
       - precip_probability
@@ -76,13 +75,13 @@
 #        unit_of_measurement: '%'
         
 # Arlo Sensors
-#  - platform: arlo
-#    monitored_conditions:
-#      - captured_today
-#      - last_capture
-#      - total_cameras
-#      - battery_level
-#      - signal_strength
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+      - battery_level
+      - signal_strength
 
  # APCUPSd
   - platform: apcupsd

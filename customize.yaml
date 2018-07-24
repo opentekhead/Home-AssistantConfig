@@ -22,10 +22,6 @@ device_tracker.1ce62bb2a4bd:
   hidden: true
 device_tracker.00bb3ac23ad6:
   hidden: true
-sensor.john_battery_state:
-  hidden: true
-sensor.john_battery_level:
-  hidden: true
 sensor.theresas_iphone_battery_state:
   hidden: true
 sensor.theresas_iphone_battery_level:
@@ -78,3 +74,9 @@ group.all_automations:
   hidden: false
 zone.home:
   radius: 150
+camera.garden:
+  friendly_name: Back Door
+sensor.last_garden:
+  friendly_name: Last Back Door
+sensor.battery_level_garden:
+  friendly_name: Battery Level Back Door
