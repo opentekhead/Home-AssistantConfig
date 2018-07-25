@@ -1,0 +1,19 @@
+- id: camera_driveway
+  alias: Enable Arlo upon HA start
+  initial_state: 'on'
+  trigger:
+  -  platform: homeassistant
+     event: start
+  action:
+  -  service: camera.enable_motion_detection
+     entity_id: camera.driveway
+
+- id: camera_garden
+  alias: Enable Arlo Back Door upon HA start
+  initial_state: 'on'
+  trigger:
+  -  platform: homeassistant
+     event: start
+  action:
+  -  service: camera.enable_motion_detection
+     entity_id: camera.garden
