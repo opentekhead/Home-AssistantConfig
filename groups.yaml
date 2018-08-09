@@ -10,6 +10,7 @@ default_view:
       - device_tracker.theresa
       - sensor.dark_sky_temperature
       - sensor.allergy_index_today
+      - vacuum.roomba
       - group.alarm
       - group.lock
       - group.harmony

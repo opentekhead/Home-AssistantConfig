@@ -185,6 +185,13 @@ camera:
 apcupsd:
    host: 192.168.240.10
 
+# iRobot Roomba 960
+vacuum:
+  - platform: roomba
+    host: 192.168.240.133
+    username: !secret roomba_username
+    password: !secret roomba_password 
+
 group: !include groups.yaml
 
 sensor: !include sensor.yaml
