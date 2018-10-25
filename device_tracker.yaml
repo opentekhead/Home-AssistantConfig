@@ -9,9 +9,14 @@
 #r        - 192.168.240.35
     
 # UniFi Controller
-#   - platform: unifi
-#      username: !secret unifi_user
-#      password: !secret unifi_password
-
+   - platform: unifi
+     host: 192.168.240.60
+     username: !secret unifi_user
+     password: !secret unifi_password
+     verify_ssl: false
+     consider_home: 180
+     new_device_defaults:
+       track_new_devices: False
+       hide_if_away: False
 
 

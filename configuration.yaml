@@ -95,10 +95,10 @@ media_player:
       host: 192.168.240.30
       port: 5006
     
-    - platform: tts_bluetooth_speaker
-      name: "Alarm Speaker"
-      address: C8:84:47:25:F5:0D
-      volume: 0.45
+#    - platform: tts_bluetooth_speaker
+#      name: "Alarm Speaker"
+#      address: C8:84:47:25:F5:0D
+#      volume: 0.45
    
 # Text to speech
 tts:
@@ -186,11 +186,11 @@ apcupsd:
    host: 192.168.240.10
 
 # iRobot Roomba 960
-vacuum:
-  - platform: roomba
-    host: 192.168.240.133
-    username: !secret roomba_username
-    password: !secret roomba_password 
+#vacuum:
+#  - platform: roomba
+#    host: 192.168.240.133
+#    username: !secret roomba_username
+#    password: !secret roomba_password 
 
 group: !include groups.yaml
 
